@@ -1,13 +1,9 @@
 package com.avatars.utils;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 public class CommonMethods {
 
@@ -44,8 +40,25 @@ public class CommonMethods {
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    /**
+     * Switches to the alert dialog and accepts it.
+     *
+     * This method switches the driver's control to the alert dialog and accepts it.
+     * It assumes that an alert dialog is currently present and accessible.
+     * After accepting the alert, the driver's control is switched back to the default content.
+     */
     public static void acceptAlert(){
         alert = driver.switchTo().alert();
         alert.accept();
+    }
+
+    public static void selectBootStrapDropDownValue(String commonLocator, String value){
+        List<WebElement> options = driver.findElements(By.xpath(commonLocator));
+        for (WebElement option : options) {
+            if (option.getText().equals(value)) {
+                option.click();
+                break;
+            }
+        }
     }
 }
