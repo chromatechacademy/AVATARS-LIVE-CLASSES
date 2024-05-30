@@ -22,8 +22,12 @@ public class AlertsAndModalDialogs {
         driver.get(url);
 
         WebElement alertButton = driver.findElement(By.xpath("//input[@value='Alert']"));
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", alertButton);
+//        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+//        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", alertButton);
+
+        CommonMethods.scrollIntoView(alertButton);
+
+
         Thread.sleep(2000);
 
         alertButton.click();
