@@ -1,5 +1,6 @@
 package com.avatars.utils;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class CommonMethods {
 
     public static WebDriver driver;
+    public static Alert alert;
 
     /**
      * Opens a Chrome browser and navigates to the specified URL.
@@ -40,5 +42,10 @@ public class CommonMethods {
     public static void scrollIntoView(WebElement element) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static void acceptAlert(){
+        alert = driver.switchTo().alert();
+        alert.accept();
     }
 }

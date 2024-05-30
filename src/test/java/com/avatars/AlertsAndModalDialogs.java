@@ -9,17 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static com.avatars.utils.CommonMethods.alert;
 import static com.avatars.utils.CommonMethods.driver;
 
 public class AlertsAndModalDialogs {
 
     public static void main(String[] args) throws InterruptedException {
 
-        CommonMethods.openChromeBrowser();
-
-        String url = "https://chromatechacademy.net/selenium-practice/";
-        driver.get(url);
-
+        CommonMethods.openChromeBrowserAndNavigateToSite("https://chromatechacademy.net/selenium-practice/");
         WebElement alertButton = driver.findElement(By.xpath("//input[@value='Alert']"));
         CommonMethods.scrollIntoView(alertButton);
 
@@ -27,8 +24,10 @@ public class AlertsAndModalDialogs {
 
         alertButton.click();
 
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
+//        Alert alert = driver.switchTo().alert();
+//        alert.accept();
+
+        CommonMethods.acceptAlert();
 
         WebElement confirmButton = driver.findElement(By.xpath("//input[@value='Confirm']"));
 
