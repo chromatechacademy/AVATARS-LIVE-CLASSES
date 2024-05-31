@@ -2,6 +2,7 @@ package com.avatars;
 
 import java.util.List;
 
+import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,23 +13,16 @@ public class DropDowns {
 
     public static void main(String[] args) {
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
+        CommonMethods.openChromeBrowserAndNavigateToSite("https://chromatechacademy.net/selenium-practice/");
 
-        String url = "https://chromatechacademy.net/selenium-practice/";
-
-        driver.get(url);
-
-        WebElement multiSelectDropDown = driver
+        WebElement multiSelectDropDown = CommonMethods.driver
                 .findElement(By.xpath("//*[@id='content']/div[1]/div[2]/fieldset/select"));
-        Select select = new Select(multiSelectDropDown);
 
-        select.selectByIndex(4);
-        select.selectByIndex(1);
-        select.selectByIndex(12);
+        CommonMethods.selectDropDownValueByIndex(multiSelectDropDown, 4);
+        CommonMethods.selectDropDownValueByIndex(multiSelectDropDown, 1);
+        CommonMethods.selectDropDownValueByIndex(multiSelectDropDown, 12);
 
-        List<WebElement> options = driver
+        List<WebElement> options = CommonMethods.driver
                 .findElements(By.xpath("//body[@id='content']/div[1]/div[2]/fieldset/select/option"));
 
         int numberOfOptions = options.size();
@@ -38,6 +32,8 @@ public class DropDowns {
            String actualText = option.getText();
            System.out.println(actualText);
         }
+
+        CommonMethods.driver.quit();
         
     }
 

@@ -1,5 +1,6 @@
 package com.avatars;
 
+import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -13,13 +14,7 @@ public class CTSMS_Login {
         // 2. enter username and password using locators of your choice
         // 3. log in
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-
-        driver.get("https://chroma.mexil.it/site/login");
-
-
+        CommonMethods.openChromeBrowserAndNavigateToSite("https://chroma.mexil.it/site/login");
+        CommonMethods.driver.quit();
     }
-    
 }

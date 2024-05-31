@@ -2,6 +2,8 @@ package com.avatars.utils;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -52,6 +54,15 @@ public class CommonMethods {
         alert.accept();
     }
 
+    /**
+     * Selects a value from a Bootstrap dropdown menu based on the given common locator and value.
+     *
+     * This method finds all the options in the dropdown menu using the common locator XPath, and then iterates
+     * through each option. If the text of an option matches the given value, it clicks on the option and stops iterating.
+     *
+     * @param commonLocator the common XPath locator for the options in the dropdown menu
+     * @param value the value to select from the dropdown menu
+     */
     public static void selectBootStrapDropDownValue(String commonLocator, String value){
         List<WebElement> options = driver.findElements(By.xpath(commonLocator));
         for (WebElement option : options) {
@@ -60,5 +71,46 @@ public class CommonMethods {
                 break;
             }
         }
+    }
+
+    /**
+     * Selects a value from a dropdown menu based on the specified index.
+     *
+     * This method selects the option in the dropdown menu at the specified index value.
+     * It uses the Select class to interact with the dropdown menu and select the option.
+     *
+     * @param element the WebElement representing the dropdown menu
+     * @param value the index value of the option to be selected
+     */
+    public static void selectDropDownValueByIndex(WebElement element, int value){
+        Select select = new Select(element);
+        select.selectByIndex(value);
+    }
+
+    /**
+     * Selects a value from a dropdown menu based on the visible text of the option.
+     *
+     * This method uses the Select class to interact with the dropdown menu and select the option that matches the visible text.
+     *
+     * @param element the WebElement representing the dropdown menu
+     * @param text the visible text of the option to be selected
+     */
+    public static void selectDropDownValueByVisibleText(WebElement element, String text){
+        Select select = new Select(element);
+        select.selectByVisibleText(text);
+    }
+
+    /**
+     * Selects a value from a dropdown menu based on the value attribute of the option.
+     *
+     * This method takes a WebElement representing the dropdown menu and a String representing the value to be selected.
+     * It uses the Select class to interact with the dropdown menu and select the option that has a value attribute matching the provided value.
+     *
+     * @param element the WebElement representing the dropdown menu
+     * @param value the value to be selected from the dropdown menu
+     */
+    public static void selectDropDownValueByValue(WebElement element, String value){
+        Select select = new Select(element);
+        select.selectByValue(value);
     }
 }

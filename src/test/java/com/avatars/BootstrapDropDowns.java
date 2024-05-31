@@ -18,7 +18,6 @@ public class BootstrapDropDowns {
 
         WebElement dropDownOne = driver
                 .findElement(By.xpath("//button[@class='btn btn-sm dropdown-toggle btn-outline-light']"));
-
         dropDownOne.click();
 
         // WebElement option3 = driver.findElement(By.xpath("(//label[@class='dropdown-item'])[3]/input"));
@@ -27,11 +26,7 @@ public class BootstrapDropDowns {
         // WebElement option4 = driver.findElement(By.xpath("//label[text()=' Option 4']"));
         // option4.click();
 
-
         CommonMethods.selectBootStrapDropDownValue("//label[@class='dropdown-item']", "Option 4");
-
-
         driver.quit();
-
     }
 }
