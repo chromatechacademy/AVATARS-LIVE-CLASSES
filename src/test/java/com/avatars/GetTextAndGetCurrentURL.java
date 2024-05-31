@@ -1,21 +1,15 @@
 package com.avatars;
 
+import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import static com.avatars.utils.CommonMethods.driver;
 
 public class GetTextAndGetCurrentURL {
 
     public static void main(String[] args) {
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-
-        String url = "https://chromatechacademy.net/selenium-practice/";
-
-        driver.get(url);
+        CommonMethods.openChromeBrowserAndNavigateToSite("https://chromatechacademy.net/selenium-practice/");
 
         String actualText = driver.getTitle();
 
@@ -41,5 +35,6 @@ public class GetTextAndGetCurrentURL {
         // Signup button
         WebElement fourthButtonText = driver.findElement(By.xpath("//button[contains(text(),'Signup')]"));
         System.out.println("Text of Signup button is: " + fourthButtonText.getText());
+        driver.quit();
     }
 }

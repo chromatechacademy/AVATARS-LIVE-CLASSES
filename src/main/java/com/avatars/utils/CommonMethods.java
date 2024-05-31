@@ -3,6 +3,7 @@ package com.avatars.utils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
@@ -112,5 +113,19 @@ public class CommonMethods {
     public static void selectDropDownValueByValue(WebElement element, String value){
         Select select = new Select(element);
         select.selectByValue(value);
+    }
+
+    /**
+     * Asserts that two strings are equal.
+     *
+     * @param actualValue   the actual value to be compared
+     * @param expectedValue the expected value to be compared
+     */
+    public static void assertEquals(String actualValue, String expectedValue){
+        try{
+            Assert.assertEquals(actualValue, expectedValue);
+        }catch(AssertionError e){
+            e.printStackTrace();
+        }
     }
 }

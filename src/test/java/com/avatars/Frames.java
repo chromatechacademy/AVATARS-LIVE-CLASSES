@@ -1,26 +1,21 @@
 package com.avatars;
 
+import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static com.avatars.utils.CommonMethods.driver;
+
 public class Frames {
 
     public static void main(String[] args) throws InterruptedException {
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-
-        String url = "https://chromatechacademy.net/selenium-practice/";
-
-        driver.get(url);
-
+        CommonMethods.openChromeBrowserAndNavigateToSite("https://chromatechacademy.net/selenium-practice/");
         WebElement iFrameExampleText = driver.findElement(By.xpath("//legend[normalize-space()='iFrame Example']"));
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", iFrameExampleText);
+        CommonMethods.scrollIntoView(iFrameExampleText);
 
         //driver.switchTo().frame(0); // switch by index
         //driver.switchTo().frame("courses-iframe"); // switch by name or id
@@ -36,11 +31,8 @@ public class Frames {
 
         // then scroll to the top of the page and click on Home
         WebElement newElement = driver.findElement(By.xpath("//button[normalize-space()='Home']"));
-        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", newElement);
-
+        CommonMethods.scrollIntoView(newElement);
         newElement.click();
-
-        Thread.sleep(5000);
         driver.quit();
     }
 }
