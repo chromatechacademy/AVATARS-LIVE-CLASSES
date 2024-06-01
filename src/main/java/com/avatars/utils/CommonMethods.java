@@ -2,7 +2,9 @@ package com.avatars.utils;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
@@ -14,6 +16,7 @@ public class CommonMethods {
     public static WebDriver driver;
     public static Alert alert;
     public static Select select;
+    public static WebDriverWait wait;
 
     /**
      * Opens a Chrome browser and navigates to the specified URL.
@@ -143,5 +146,18 @@ public class CommonMethods {
         for(String window : allWindows){
             driver.switchTo().window(window);
         }
+    }
+
+    /**
+     * Waits for an alert dialog to be present.
+     *
+     * This method uses the WebDriverWait class to wait for a specified amount of time for an alert dialog to be present.
+     * It assumes that the driver and a duration of 10 seconds have been initialized before calling this method.
+     *
+     * @throws TimeoutException if the alert dialog is not present after waiting for the specified duration
+     */
+    public static void waitForAlertToBePresent(){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.alertIsPresent());
     }
 }

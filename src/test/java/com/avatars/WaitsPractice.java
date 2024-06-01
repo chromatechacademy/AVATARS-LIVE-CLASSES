@@ -1,5 +1,6 @@
 package com.avatars;
 
+import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,25 +10,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static com.avatars.utils.CommonMethods.driver;
+import static com.avatars.utils.CommonMethods.wait;
+
 public class WaitsPractice {
 
     public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        String url = "https://chromatechacademy.net/selenium-explicit-wait-practice/";
-
-        driver.get(url);
-
+        CommonMethods.openChromeBrowserAndNavigateToSite("https://chromatechacademy.net/selenium-explicit-wait-practice/");
         WebElement alertButton = driver.findElement(By.xpath("//button[normalize-space()='Click me to open an Alert after 5 seconds']"));
-
         alertButton.click();
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.alertIsPresent());
+        CommonMethods.waitForAlertToBePresent();
 
         // HANDLING ALERT
         driver.switchTo().alert().accept();
