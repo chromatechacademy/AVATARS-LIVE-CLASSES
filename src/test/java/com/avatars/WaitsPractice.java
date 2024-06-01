@@ -2,21 +2,14 @@ package com.avatars;
 
 import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
 import static com.avatars.utils.CommonMethods.driver;
 import static com.avatars.utils.CommonMethods.wait;
 
 public class WaitsPractice {
 
     public static void main(String[] args) {
-
         CommonMethods.openChromeBrowserAndNavigateToSite("https://chromatechacademy.net/selenium-explicit-wait-practice/");
         WebElement alertButton = driver.findElement(By.xpath("//button[normalize-space()='Click me to open an Alert after 5 seconds']"));
         alertButton.click();
