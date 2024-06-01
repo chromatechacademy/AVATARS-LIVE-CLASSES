@@ -7,6 +7,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 public class CommonMethods {
 
@@ -127,6 +128,20 @@ public class CommonMethods {
             Assert.assertEquals(actualValue, expectedValue);
         }catch(AssertionError e){
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Switches the driver's control to the next window.
+     *
+     * This method retrieves all the window handles using the driver. It then iterates through each window handle
+     * and switches the driver's control to that window. The iteration continues until the driver's control is
+     * switched to the last window.
+     */
+    public static void switchToNextWindow(){
+        Set<String> allWindows = driver.getWindowHandles();
+        for(String window : allWindows){
+            driver.switchTo().window(window);
         }
     }
 }
