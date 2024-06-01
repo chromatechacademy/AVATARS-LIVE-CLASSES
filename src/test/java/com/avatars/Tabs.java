@@ -7,7 +7,7 @@ import static com.avatars.utils.CommonMethods.driver;
 
 public class Tabs {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         CommonMethods.openChromeBrowserAndNavigateToSite("https://chromatechacademy.net/selenium-practice/");
         WebElement openTabButton = driver.findElement(By.xpath("//a[contains(text(),'Open Tab')]"));
         CommonMethods.scrollIntoView(openTabButton);
