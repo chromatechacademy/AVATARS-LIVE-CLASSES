@@ -12,6 +12,7 @@ public class CommonMethods {
 
     public static WebDriver driver;
     public static Alert alert;
+    public static Select select;
 
     /**
      * Opens a Chrome browser and navigates to the specified URL.
@@ -84,7 +85,7 @@ public class CommonMethods {
      * @param value the index value of the option to be selected
      */
     public static void selectDropDownValueByIndex(WebElement element, int value){
-        Select select = new Select(element);
+        select = new Select(element);
         select.selectByIndex(value);
     }
 
@@ -97,7 +98,7 @@ public class CommonMethods {
      * @param text the visible text of the option to be selected
      */
     public static void selectDropDownValueByVisibleText(WebElement element, String text){
-        Select select = new Select(element);
+        select = new Select(element);
         select.selectByVisibleText(text);
     }
 
@@ -111,7 +112,7 @@ public class CommonMethods {
      * @param value the value to be selected from the dropdown menu
      */
     public static void selectDropDownValueByValue(WebElement element, String value){
-        Select select = new Select(element);
+        select = new Select(element);
         select.selectByValue(value);
     }
 

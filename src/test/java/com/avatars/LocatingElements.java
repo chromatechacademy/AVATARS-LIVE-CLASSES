@@ -1,21 +1,15 @@
 package com.avatars;
 
+import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import static com.avatars.utils.CommonMethods.driver;
 
 public class LocatingElements {
 
-    public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
+    public static void main(String[] args) {
 
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-
-        String url = "https://chroma.mexil.it/site/login";
-
-        driver.get(url);
+        CommonMethods.openChromeBrowserAndNavigateToSite("https://chroma.mexil.it/site/login");
 
         // ----- Locating element by 'ID' ------
         // WebElement usernameTextBox = driver.findElement(By.id("form-username"));
@@ -45,6 +39,7 @@ public class LocatingElements {
         // --- Locating using relative xpath ---
         WebElement usernameTextBox = driver.findElement(By.xpath("//input[@type='text']"));
         usernameTextBox.sendKeys("general@teacher.com");
-    }
 
+        driver.quit();
+    }
 }
