@@ -9,23 +9,23 @@ import java.time.Duration;
 
 public class WebDriverUtils {
 
-    public static void setUp(String browser){
+    public static WebDriver driver;
 
-        if(browser.equalsIgnoreCase("Chrome")){
-            WebDriver driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        } else if(browser.equalsIgnoreCase("Edge")){
-            WebDriver driver = new EdgeDriver();
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        } else if (browser.equalsIgnoreCase("Firefox")){
-            WebDriver driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public static void setUp(String browser) {
+
+        if (browser.equalsIgnoreCase("Chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("Edge")) {
+            driver = new EdgeDriver();
+        } else if (browser.equalsIgnoreCase("Firefox")) {
+            driver = new FirefoxDriver();
         }
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+    public static void tearDown() {
+        driver.quit();
     }
 }
