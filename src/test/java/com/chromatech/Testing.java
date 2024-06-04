@@ -6,7 +6,7 @@ public class Testing {
 
     public static void main(String[] args) {
 
-        WebDriverUtils.setUp("edge");
+        WebDriverUtils.setUp("sdfgsf");
         WebDriverUtils.tearDown();
     }
 }
