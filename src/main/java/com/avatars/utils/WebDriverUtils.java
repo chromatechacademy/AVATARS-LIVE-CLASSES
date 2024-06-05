@@ -13,12 +13,13 @@ public class WebDriverUtils {
     public static void setUp() {
 
         ConfigReader.readProperties(FrameworkConstants.LOCAL_TEST_SETTINGS_FILEPATH);
+        String browser = ConfigReader.getPropertyValue("browser");
 
-        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
-        } else if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("edge")) {
+        } else if (browser.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
-        } else if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("firefox")) {
+        } else if (browser.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
         } else {
             throw new RuntimeException("* * * * INVALID BROWSER NAME * * * *");
