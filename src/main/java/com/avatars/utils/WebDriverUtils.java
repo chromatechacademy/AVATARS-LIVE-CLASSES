@@ -10,13 +10,15 @@ public class WebDriverUtils {
 
     public static WebDriver driver;
 
-    public static void setUp(String browser) {
+    public static void setUp() {
 
-        if (browser.equalsIgnoreCase("Chrome")) {
+        ConfigReader.readProperties(FrameworkConstants.LOCAL_TEST_SETTINGS_FILEPATH);
+
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("Edge")) {
+        } else if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
-        } else if (browser.equalsIgnoreCase("Firefox")) {
+        } else if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
         } else {
             throw new RuntimeException("* * * * INVALID BROWSER NAME * * * *");

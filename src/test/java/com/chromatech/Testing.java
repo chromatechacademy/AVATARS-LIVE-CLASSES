@@ -6,7 +6,7 @@ public class Testing {
 
     public static void main(String[] args) {
 
-        WebDriverUtils.setUp("sdfgsf");
+        WebDriverUtils.setUp();
         WebDriverUtils.tearDown();
     }
 }
