@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(plugin = { "html:target/cucumber-reports/cucumber-html-report.html","json:target/cucumber.json",
         "rerun:target/failed.txt",
         "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        features = "src/test/java/com/chromatech/Cucumber_BDD_Testing/features",
+        features = "src/test/java/com/chromatech/features",
         glue = "com.chromatech.Cucumber_BDD_Testing.stepDefinitions",
         tags = "@Progression",
         dryRun = false
