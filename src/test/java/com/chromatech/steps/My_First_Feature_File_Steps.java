@@ -26,14 +26,6 @@ public class My_First_Feature_File_Steps {
     public void clicks_on_sign_in_button() {
        WebElement signInButton = WebDriverUtils.driver.findElement(By.xpath("//button[@type='submit']"));
        signInButton.click();
-       CommonMethods.sleep(3000);
-    }
-
-    @Then("user is directed to the CTSMS dashboard page")
-    public void user_is_directed_to_the_ctsms_dashboard_page() {
-        String actualURL = WebDriverUtils.driver.getCurrentUrl();
-        String expectedURL = "https://mexil.it/chroma/admin/admin/dashboard";
-        Assert.assertEquals(actualURL, expectedURL);
     }
 
     @When("user enters username {string} in username text box")
@@ -42,4 +34,9 @@ public class My_First_Feature_File_Steps {
         usernameTextBox.sendKeys(username);
     }
 
+    @Then("user is directed to the CTSMS dashboard page {string}")
+    public void user_is_directed_to_the_ctsms_dashboard_page(String expectedURL) {
+        String actualURL = WebDriverUtils.driver.getCurrentUrl();
+        Assert.assertEquals(actualURL, expectedURL);
+    }
 }
