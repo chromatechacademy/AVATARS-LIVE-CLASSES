@@ -11,15 +11,15 @@ import org.testng.Assert;
 
 public class My_First_Feature_File_Steps {
 
-    @Given("a user is on the Chroma Tech Academy practice site")
-    public void a_user_is_on_the_chroma_tech_academy_practice_site() {
-        WebDriverUtils.driver.get("https://chroma.mexil.it/site/login");
+    @Given("a user is on the Chroma Tech Academy practice site {string}")
+    public void a_user_is_on_the_chroma_tech_academy_practice_site(String url) {
+        WebDriverUtils.driver.get(url);
     }
 
-    @When("enters password in password text box")
-    public void enters_password_in_password_text_box() {
-      WebElement passwordTextBox = WebDriverUtils.driver.findElement(By.xpath("//input[@id='form-password']"));
-      passwordTextBox.sendKeys("123456");
+    @When("enters password {string} in password text box")
+    public void enters_password_in_password_text_box(String password) {
+        WebElement passwordTextBox = WebDriverUtils.driver.findElement(By.xpath("//input[@id='form-password']"));
+        passwordTextBox.sendKeys(password);
     }
 
     @When("clicks on Sign In button")
