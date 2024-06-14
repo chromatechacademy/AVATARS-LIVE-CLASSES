@@ -1,5 +1,6 @@
 package com.chromatech.steps;
 
+import com.avatars.utils.CucumberLogUtils;
 import com.avatars.utils.WebDriverUtils;
 import com.chromatech.pages.LoginPage;
 import io.cucumber.java.en.Given;
@@ -14,6 +15,7 @@ public class My_First_Feature_File_Steps {
     @Given("a user is on the Chroma Tech Academy practice site {string}")
     public void a_user_is_on_the_chroma_tech_academy_practice_site(String url) {
         WebDriverUtils.driver.get(url);
+        CucumberLogUtils.logScreenShot();
     }
 
     @When("enters password {string} in password text box")
