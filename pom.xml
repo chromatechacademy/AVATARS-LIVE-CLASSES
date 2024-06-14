@@ -65,6 +65,52 @@
   <build>
     <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M5</version>
+          <configuration>
+            <includes>
+              <include>
+
+              </include>
+            </includes>
+            <testFailureIgnore>true</testFailureIgnore> <!-- to get report even when fails -->
+          </configuration>
+        </plugin>
+
+        <!-- to convert .json files to MAVEN CUCUMBER REPORTS reports -->
+        <plugin>
+          <groupId>net.masterthought</groupId>
+          <artifactId>maven-cucumber-reporting</artifactId>
+          <version>5.0.0</version>
+          <executions>
+            <execution>
+              <id>execution</id>
+              <phase>test</phase> <!-- the report will be created on test phase -->
+              <goals>
+                <goal>generate</goal>
+              </goals>
+              <configuration>
+                <projectName>Chroma-Test-Automation</projectName>
+                <!-- optional, per documentation set this to "true" to bypass generation
+                >>>>>>> branch 'main' of
+                https://github.com/chromatechacademy/Dreamers-Instructor-Test-Automation.git
+                of Cucumber Reports entirely, defaults to false if not specified -->
+                <!-- <skip>false</skip> -->
+                <!-- output directory for the generated report -->
+                <outputDirectory>${project.build.directory}</outputDirectory>
+                <!-- optional, defaults to outputDirectory if not specified -->
+                <inputDirectory>${project.build.directory}</inputDirectory>
+                <jsonFiles>
+                  <!-- supports wildcard or name pattern -->
+                  <param>**/cucumber.json</param> <!-- it will take .json file -->
+                </jsonFiles>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>

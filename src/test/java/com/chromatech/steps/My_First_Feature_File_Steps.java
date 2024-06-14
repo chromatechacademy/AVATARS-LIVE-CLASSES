@@ -1,15 +1,15 @@
 package com.chromatech.steps;
 
-import com.avatars.utils.CommonMethods;
 import com.avatars.utils.WebDriverUtils;
+import com.chromatech.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class My_First_Feature_File_Steps {
+
+    LoginPage loginPage = new LoginPage();
 
     @Given("a user is on the Chroma Tech Academy practice site {string}")
     public void a_user_is_on_the_chroma_tech_academy_practice_site(String url) {
@@ -18,20 +18,17 @@ public class My_First_Feature_File_Steps {
 
     @When("enters password {string} in password text box")
     public void enters_password_in_password_text_box(String password) {
-        WebElement passwordTextBox = WebDriverUtils.driver.findElement(By.xpath("//input[@id='form-password']"));
-        passwordTextBox.sendKeys(password);
+        loginPage.passwordTextBox.sendKeys(password);
     }
 
     @When("clicks on Sign In button")
     public void clicks_on_sign_in_button() {
-       WebElement signInButton = WebDriverUtils.driver.findElement(By.xpath("//button[@type='submit']"));
-       signInButton.click();
+       loginPage.signInButton.click();
     }
 
     @When("user enters username {string} in username text box")
     public void user_enters_username_in_username_text_box(String username) {
-        WebElement usernameTextBox = WebDriverUtils.driver.findElement(By.xpath("//input[@id='form-username']"));
-        usernameTextBox.sendKeys(username);
+        loginPage.usernameTextBox.sendKeys(username);
     }
 
     @Then("user is directed to the CTSMS dashboard page {string}")
