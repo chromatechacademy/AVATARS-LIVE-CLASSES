@@ -11,6 +11,10 @@ public class DashboardPage {
     @FindBy(xpath = "//span[normalize-space()='Student Information']")
     public WebElement studentInformationModule;
 
+    /* STUDENT ADMISSION SUB MODULE */
+    @FindBy(xpath = "//a[normalize-space()='Student Admission']")
+    public WebElement studentAdmissionSubModule;
+
     public DashboardPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

@@ -7,3 +7,4 @@ Feature: Student Admission Scenarios
     And enters password "123456" in password text box
     And clicks on Sign In button
     When user clicks on Student Information module
+    And clicks on Student Admission sub module
