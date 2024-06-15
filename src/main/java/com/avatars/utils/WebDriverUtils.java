@@ -1,9 +1,11 @@
 package com.avatars.utils;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.time.Duration;
 
 public class WebDriverUtils {
@@ -14,8 +16,12 @@ public class WebDriverUtils {
 
         ConfigReader.readProperties(FrameworkConstants.LOCAL_TEST_SETTINGS_FILEPATH);
         String browser = ConfigReader.getPropertyValue("browser");
+        String chris = ConfigReader.getPropertyValue("chris");
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome") && chris.equalsIgnoreCase("true")) {
+            int width = driver.manage().window().getSize().getWidth();
+            driver.manage().window().setPosition(new Point(width / 2, 0));
+        } else if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();

@@ -15,6 +15,11 @@ public class Student_Admission_Steps {
 
     @When("clicks on Student Admission sub module")
     public void clicks_on_student_admission_sub_module() {
+        dashboardPage.studentAdmissionSubModule.click();
+    }
+
+    @When("enters Unique Admission Number")
+    public void enters_unique_admission_number() {
 
     }
 }

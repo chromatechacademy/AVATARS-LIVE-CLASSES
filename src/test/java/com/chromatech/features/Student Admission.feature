@@ -8,3 +8,4 @@ Feature: Student Admission Scenarios
     And clicks on Sign In button
     When user clicks on Student Information module
     And clicks on Student Admission sub module
+    And enters Unique Admission Number
