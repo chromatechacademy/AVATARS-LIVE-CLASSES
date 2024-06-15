@@ -19,6 +19,7 @@ public class WebDriverUtils {
         String chris = ConfigReader.getPropertyValue("chris");
 
         if (browser.equalsIgnoreCase("chrome") && chris.equalsIgnoreCase("true")) {
+            driver = new ChromeDriver();
             int width = driver.manage().window().getSize().getWidth();
             driver.manage().window().setPosition(new Point(width / 2, 0));
         } else if (browser.equalsIgnoreCase("chrome")) {
