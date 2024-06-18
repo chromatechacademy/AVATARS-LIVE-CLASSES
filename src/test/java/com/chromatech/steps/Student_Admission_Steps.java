@@ -32,8 +32,7 @@ public class Student_Admission_Steps {
 
     @When("selects {string} for section drop down")
     public void selects_for_section_drop_down(String text) {
-
+        CommonMethods.selectDropDownValueByVisibleText(studentAdmissionsPage.sectionDropDown, text);
+        CommonMethods.sleep(5000);
     }
-
-
 }
