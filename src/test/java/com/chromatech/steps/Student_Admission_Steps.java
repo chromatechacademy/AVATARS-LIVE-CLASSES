@@ -1,9 +1,11 @@
 package com.chromatech.steps;
 
 import com.avatars.utils.CommonMethods;
+import com.avatars.utils.WebDriverUtils;
 import com.chromatech.pages.DashboardPage;
 import com.chromatech.pages.StudentAdmissionsPage;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class Student_Admission_Steps {
 
@@ -43,5 +45,15 @@ public class Student_Admission_Steps {
     @When("enters last name {string}")
     public void enters_last_name(String lastName) {
        studentAdmissionsPage.lastNameTextBox.sendKeys(lastName);
+    }
+
+    @When("selects {string} from gender drop down")
+    public void selects_from_gender_drop_down(String gender) {
+        CommonMethods.selectDropDownValueByVisibleText(studentAdmissionsPage.genderDropDown, gender);
+    }
+
+    @When("selects {string} for Date of Birth Calendar")
+    public void selects_for_date_of_birth_calendar(String dateOfBirth) {
+        CommonMethods.selectDateByJS(dateOfBirth, studentAdmissionsPage.dateOfBirthTextBox);
     }
 }

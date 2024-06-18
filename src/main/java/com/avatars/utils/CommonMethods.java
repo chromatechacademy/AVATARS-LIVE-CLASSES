@@ -173,4 +173,16 @@ public class CommonMethods {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Selects a date using JavaScript by setting the value attribute of the specified WebElement.
+     *
+     * @param dateOfBirth the date to be selected in format "MM/DD/YYYY"
+     * @param element the WebElement representing the input field
+     */
+    public static void selectDateByJS(String dateOfBirth, WebElement element ){
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) WebDriverUtils.driver;
+        String script = "arguments[0].setAttribute('value', '"+ dateOfBirth + "');";
+        jsExecutor.executeScript(script, element);
+    }
 }

@@ -27,6 +27,14 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//input[@name='lastname']")
     public WebElement lastNameTextBox;
 
+    /* GENDER DROP DOWN */
+    @FindBy(xpath = "//select[@name='gender']")
+    public WebElement genderDropDown;
+
+    /* DATE OF BIRTH TEXT BOX */
+    @FindBy(xpath = "//input[@name='dob']")
+    public WebElement dateOfBirthTextBox;
+
     public StudentAdmissionsPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

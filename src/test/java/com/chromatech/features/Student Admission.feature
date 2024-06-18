@@ -13,3 +13,5 @@ Feature: Student Admission Scenarios
     And selects "Cucumber Fundamentals" for section drop down
     And enters first name "Chroma Tech"
     And enters last name "Academy"
+    And selects "Female" from gender drop down
+    And selects "04/01/1990" for Date of Birth Calendar
