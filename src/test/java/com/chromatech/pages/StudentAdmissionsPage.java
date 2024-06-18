@@ -11,6 +11,10 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//input[@name='admission_no']")
     public WebElement admissionNumberTextBox;
 
+    /* CLASS DROP DOWN */
+    @FindBy(xpath = "//select[@name='class_id']")
+    public WebElement classDropDown;
+
     public StudentAdmissionsPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

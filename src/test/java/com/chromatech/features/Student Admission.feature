@@ -9,3 +9,4 @@ Feature: Student Admission Scenarios
     When user clicks on Student Information module
     And clicks on Student Admission sub module
     And enters Unique Admission Number "12345"
+    And selects SDET for class drop down

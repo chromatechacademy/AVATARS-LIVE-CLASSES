@@ -24,4 +24,9 @@ public class Student_Admission_Steps {
     public void enters_unique_admission_number(String admissionNumber) {
         studentAdmissionsPage.admissionNumberTextBox.sendKeys(admissionNumber);
     }
+
+    @When("selects SDET for class drop down")
+    public void selects_sdet_for_class_drop_down() {
+        CommonMethods.selectDropDownValueByVisibleText();
+    }
 }
