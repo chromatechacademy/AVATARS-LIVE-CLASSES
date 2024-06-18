@@ -23,6 +23,10 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//input[@name='firstname']")
     public WebElement firstNameTextBox;
 
+    /* LAST NAME TEXT BOX */
+    @FindBy(xpath = "//input[@name='lastname']")
+    public WebElement lastNameTextBox;
+
     public StudentAdmissionsPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

@@ -39,4 +39,10 @@ public class Student_Admission_Steps {
     public void enters_first_name(String firstName) {
         studentAdmissionsPage.firstNameTextBox.sendKeys(firstName);
     }
+
+    @When("enters last name {string}")
+    public void enters_last_name(String lastName) {
+       studentAdmissionsPage.lastNameTextBox.sendKeys(lastName);
+       CommonMethods.sleep(5000);
+    }
 }
