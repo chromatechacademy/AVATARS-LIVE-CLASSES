@@ -19,6 +19,10 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//select[@name='section_id']")
     public WebElement sectionDropDown;
 
+    /* FIRST NAME TEXT BOX */
+    @FindBy(xpath = "//input[@name='firstname']")
+    public WebElement firstNameTextBox;
+
     public StudentAdmissionsPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

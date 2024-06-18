@@ -11,3 +11,5 @@ Feature: Student Admission Scenarios
     And enters Unique Admission Number "12345"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
+    And enters first name "Chroma Tech"
+    And enters last name "Academy"
