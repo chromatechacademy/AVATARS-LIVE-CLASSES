@@ -35,6 +35,10 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//input[@name='dob']")
     public WebElement dateOfBirthTextBox;
 
+    /* FATHER NAME TEXT BOX */
+    @FindBy(xpath = "//input[@name='father_name']")
+    public WebElement fatherNameTextBox;
+
     public StudentAdmissionsPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

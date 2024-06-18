@@ -15,3 +15,4 @@ Feature: Student Admission Scenarios
     And enters last name "Academy"
     And selects "Female" from gender drop down
     And selects "04/01/1990" for Date of Birth Calendar
+    And enters father name "Chroma Father"

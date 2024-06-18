@@ -56,4 +56,10 @@ public class Student_Admission_Steps {
     public void selects_for_date_of_birth_calendar(String dateOfBirth) {
         CommonMethods.selectDateByJS(dateOfBirth, studentAdmissionsPage.dateOfBirthTextBox);
     }
+
+    @When("enters father name {string}")
+    public void enters_father_name(String fatherName) {
+        studentAdmissionsPage.fatherNameTextBox.sendKeys(fatherName);
+        CommonMethods.sleep(5000);
+    }
 }
