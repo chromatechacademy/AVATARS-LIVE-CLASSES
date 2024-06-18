@@ -25,8 +25,15 @@ public class Student_Admission_Steps {
         studentAdmissionsPage.admissionNumberTextBox.sendKeys(admissionNumber);
     }
 
-    @When("selects SDET for class drop down")
-    public void selects_sdet_for_class_drop_down() {
-        CommonMethods.selectDropDownValueByVisibleText();
+    @When("selects {string} for class drop down")
+    public void selects_for_class_drop_down(String text) {
+        CommonMethods.selectDropDownValueByVisibleText(studentAdmissionsPage.classDropDown, text);
     }
+
+    @When("selects {string} for section drop down")
+    public void selects_for_section_drop_down(String text) {
+
+    }
+
+
 }
