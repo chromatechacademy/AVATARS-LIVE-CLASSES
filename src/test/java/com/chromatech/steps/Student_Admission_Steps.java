@@ -76,6 +76,6 @@ public class Student_Admission_Steps {
 
     @When("enters guardian phone number {string}")
     public void enters_guardian_phone_number(String phoneNumber) {
-
+        studentAdmissionsPage.guardianPhoneTextBox.sendKeys(phoneNumber);
     }
 }
