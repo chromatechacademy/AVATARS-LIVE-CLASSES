@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/com/chromatech/features",
         glue = {"com.chromatech.steps", "com.hooks"},
         tags = "@StudentAdmission",
-        dryRun = false
+        dryRun = true
 )
 
 public class RunTest extends AbstractTestNGCucumberTests {

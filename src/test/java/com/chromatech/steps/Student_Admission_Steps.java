@@ -60,6 +60,11 @@ public class Student_Admission_Steps {
     @When("enters father name {string}")
     public void enters_father_name(String fatherName) {
         studentAdmissionsPage.fatherNameTextBox.sendKeys(fatherName);
-        CommonMethods.sleep(5000);
+    }
+
+    @When("selects Father radio button for If guardian is field")
+    public void selects_father_radio_button_for_if_guardian_is_field() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 }

@@ -16,3 +16,4 @@ Feature: Student Admission Scenarios
     And selects "Female" from gender drop down
     And selects "04/01/1990" for Date of Birth Calendar
     And enters father name "Chroma Father"
+    And selects Father radio button for If guardian is field
