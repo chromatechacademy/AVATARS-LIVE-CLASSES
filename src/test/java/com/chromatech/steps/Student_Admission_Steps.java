@@ -44,7 +44,7 @@ public class Student_Admission_Steps {
 
     @When("enters last name {string}")
     public void enters_last_name(String lastName) {
-       studentAdmissionsPage.lastNameTextBox.sendKeys(lastName);
+        studentAdmissionsPage.lastNameTextBox.sendKeys(lastName);
     }
 
     @When("selects {string} from gender drop down")
@@ -66,6 +66,16 @@ public class Student_Admission_Steps {
     public void selects_father_radio_button_for_if_guardian_is_field() {
         CommonMethods.scrollIntoView(studentAdmissionsPage.fatherRadioButton);
         studentAdmissionsPage.fatherRadioButton.click();
+    }
+
+    @When("saves submission")
+    public void saves_submission() {
+        studentAdmissionsPage.saveButton.click();
         CommonMethods.sleep(5000);
+    }
+
+    @When("enters guardian phone number {string}")
+    public void enters_guardian_phone_number(String phoneNumber) {
+
     }
 }

@@ -43,6 +43,14 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//div[@class='bozero']//label[2]")
     public WebElement fatherRadioButton;
 
+    /* SAVE BUTTON */
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
+    public WebElement saveButton;
+
+    /* GUARDIAN PHONE TEXT BOX */
+    @FindBy(xpath = "//input[@name='guardian_phone']")
+    public WebElement guardianPhoneTextBox;
+
     public StudentAdmissionsPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

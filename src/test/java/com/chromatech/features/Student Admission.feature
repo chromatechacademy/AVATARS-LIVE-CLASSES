@@ -17,3 +17,5 @@ Feature: Student Admission Scenarios
     And selects "04/01/1990" for Date of Birth Calendar
     And enters father name "Chroma Father"
     And selects Father radio button for If guardian is field
+    And enters guardian phone number "703-687-5816"
+    And saves submission
