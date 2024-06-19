@@ -6,6 +6,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static com.avatars.utils.WebDriverUtils.driver;
+
 public class CTSMS_Login {
 
     public static void main(String[] args) {
@@ -15,6 +17,6 @@ public class CTSMS_Login {
         // 3. log in
 
         CommonMethods.openChromeBrowserAndNavigateToSite("https://chroma.mexil.it/site/login");
-        CommonMethods.driver.quit();
+        driver.quit();
     }
 }

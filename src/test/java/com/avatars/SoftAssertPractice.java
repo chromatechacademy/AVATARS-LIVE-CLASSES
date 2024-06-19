@@ -3,7 +3,8 @@ package com.avatars;
 import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
-import static com.avatars.utils.CommonMethods.driver;
+
+import static com.avatars.utils.WebDriverUtils.driver;
 
 public class SoftAssertPractice {
 

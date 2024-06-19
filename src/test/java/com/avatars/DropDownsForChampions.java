@@ -8,7 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static com.avatars.utils.CommonMethods.driver;
+import static com.avatars.utils.WebDriverUtils.driver;
+
 
 public class DropDownsForChampions {
 

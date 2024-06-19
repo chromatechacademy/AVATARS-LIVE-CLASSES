@@ -4,7 +4,8 @@ import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
-import static com.avatars.utils.CommonMethods.driver;
+
+import static com.avatars.utils.WebDriverUtils.driver;
 
 public class FindElementVsFindElements {
 

@@ -2,7 +2,8 @@ package com.avatars;
 
 import com.avatars.utils.CommonMethods;
 import org.openqa.selenium.By;
-import static com.avatars.utils.CommonMethods.driver;
+
+import static com.avatars.utils.WebDriverUtils.driver;
 
 public class RadioButtons {
 

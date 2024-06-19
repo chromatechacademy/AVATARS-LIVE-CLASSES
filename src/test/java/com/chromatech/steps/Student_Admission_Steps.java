@@ -64,7 +64,8 @@ public class Student_Admission_Steps {
 
     @When("selects Father radio button for If guardian is field")
     public void selects_father_radio_button_for_if_guardian_is_field() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        CommonMethods.scrollIntoView(studentAdmissionsPage.fatherRadioButton);
+        studentAdmissionsPage.fatherRadioButton.click();
+        CommonMethods.sleep(5000);
     }
 }

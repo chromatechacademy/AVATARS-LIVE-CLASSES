@@ -39,6 +39,10 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//input[@name='father_name']")
     public WebElement fatherNameTextBox;
 
+    /* FATHER RADIO BUTTON */
+    @FindBy(xpath = "//div[@class='bozero']//label[2]")
+    public WebElement fatherRadioButton;
+
     public StudentAdmissionsPage(){
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

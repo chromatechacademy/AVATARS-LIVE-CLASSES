@@ -6,14 +6,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+import static com.avatars.utils.WebDriverUtils.driver;
+
 public class CommonMethods {
 
-    public static WebDriver driver;
     public static Alert alert;
     public static Select select;
     public static WebDriverWait wait;
@@ -181,7 +181,7 @@ public class CommonMethods {
      * @param element the WebElement representing the input field
      */
     public static void selectDateByJS(String dateOfBirth, WebElement element ){
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) WebDriverUtils.driver;
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         String script = "arguments[0].setAttribute('value', '"+ dateOfBirth + "');";
         jsExecutor.executeScript(script, element);
     }
