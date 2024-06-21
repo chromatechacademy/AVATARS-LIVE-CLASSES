@@ -2,6 +2,7 @@ package com.chromatech.steps;
 
 import com.avatars.utils.CommonMethods;
 import com.avatars.utils.WebDriverUtils;
+import com.chromatech.pages.BulkDeletePage;
 import com.chromatech.pages.DashboardPage;
 import com.chromatech.pages.StudentAdmissionsPage;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ public class Student_Admission_Steps {
 
     DashboardPage dashboardPage = new DashboardPage();
     StudentAdmissionsPage studentAdmissionsPage = new StudentAdmissionsPage();
+    BulkDeletePage bulkDeletePage = new BulkDeletePage();
 
     @When("user clicks on Student Information module")
     public void user_clicks_on_student_information_module() {
@@ -87,5 +89,7 @@ public class Student_Admission_Steps {
     @Then("test account is reset with admission number {string}, class {string}, section {string}")
     public void test_account_is_reset_with_admission_number_class_section(String admissionNumber, String className, String sectionName) {
         dashboardPage.bulkDeleteSubModule.click();
+        CommonMethods.selectDropDownValueByVisibleText(bulkDeletePage.classDropDown, className);
+        CommonMethods.selectDropDownValueByVisibleText(bulkDeletePage.sectionDropDown, sectionName);
     }
 }
