@@ -79,9 +79,13 @@ public class Student_Admission_Steps {
         studentAdmissionsPage.guardianPhoneTextBox.sendKeys(phoneNumber);
     }
 
-    @Then("test account is reset {string}")
-    public void test_account_is_reset(String admissionNumber) {
+//    @Then("test account is reset {string}")
+//    public void test_account_is_reset(String admissionNumber) {
+//        dashboardPage.bulkDeleteSubModule.click();
+//    }
+
+    @Then("test account is reset with admission number {string}, class {string}, section {string}")
+    public void test_account_is_reset_with_admission_number_class_section(String admissionNumber, String className, String sectionName) {
         dashboardPage.bulkDeleteSubModule.click();
-        CommonMethods.sleep(5000);
     }
 }

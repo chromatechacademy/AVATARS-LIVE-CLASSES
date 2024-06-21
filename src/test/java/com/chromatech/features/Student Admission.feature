@@ -19,4 +19,4 @@ Feature: Student Admission Scenarios
     And selects Father radio button for If guardian is field
     And enters guardian phone number "703-687-5816"
     And saves submission
-    Then test account is reset "123456789012345"
+    Then test account is reset with admission number "123456789012345", class "", section ""

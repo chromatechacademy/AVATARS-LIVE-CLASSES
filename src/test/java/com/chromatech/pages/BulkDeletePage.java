@@ -3,9 +3,18 @@ package com.chromatech.pages;
 import com.avatars.utils.WebDriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BulkDeletePage {
+
+    /* CLASS DROP DOWN */
+    @FindBy(xpath = "//select[@name='class_id']")
+    public WebElement classDropDown;
+
+    /* SECTION DROP DOWN */
+    @FindBy(xpath = "//select[@name='section_id']")
+    public WebElement sectionDropDown;
 
     /**
      * Finds and returns the WebElement of the dynamic delete record locator based on the provided text.
