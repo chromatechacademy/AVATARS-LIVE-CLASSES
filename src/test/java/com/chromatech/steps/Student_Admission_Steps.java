@@ -81,15 +81,17 @@ public class Student_Admission_Steps {
         studentAdmissionsPage.guardianPhoneTextBox.sendKeys(phoneNumber);
     }
 
-//    @Then("test account is reset {string}")
-//    public void test_account_is_reset(String admissionNumber) {
-//        dashboardPage.bulkDeleteSubModule.click();
-//    }
-
     @Then("test account is reset with admission number {string}, class {string}, section {string}")
     public void test_account_is_reset_with_admission_number_class_section(String admissionNumber, String className, String sectionName) {
         dashboardPage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValueByVisibleText(bulkDeletePage.classDropDown, className);
         CommonMethods.selectDropDownValueByVisibleText(bulkDeletePage.sectionDropDown, sectionName);
+        bulkDeletePage.searchButton.click();
+        CommonMethods.waitForClickabilityOfElement(BulkDeletePage.dynamicDeleteRecordLocator(admissionNumber));
+        CommonMethods.scrollIntoView(BulkDeletePage.dynamicDeleteRecordLocator(admissionNumber));
+        BulkDeletePage.dynamicDeleteRecordLocator(admissionNumber).click();
+        CommonMethods.scrollIntoView(bulkDeletePage.deleteButton);
+        bulkDeletePage.deleteButton.click();
+        CommonMethods.acceptAlert();
     }
 }

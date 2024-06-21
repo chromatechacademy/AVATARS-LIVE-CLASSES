@@ -185,4 +185,14 @@ public class CommonMethods {
         String script = "arguments[0].setAttribute('value', '"+ dateOfBirth + "');";
         jsExecutor.executeScript(script, element);
     }
+
+    /**
+     * Waits for the element to be clickable before performing an action.
+     *
+     * @param element the WebElement to wait for
+     */
+    public static void waitForClickabilityOfElement(WebElement element){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
 }

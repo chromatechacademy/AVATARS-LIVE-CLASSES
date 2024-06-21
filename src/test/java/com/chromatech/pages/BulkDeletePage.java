@@ -16,6 +16,14 @@ public class BulkDeletePage {
     @FindBy(xpath = "//select[@name='section_id']")
     public WebElement sectionDropDown;
 
+    /* SEARCH BUTTON */
+    @FindBy(xpath = "//button[normalize-space()='Search']")
+    public WebElement searchButton;
+
+    /* DELETE BUTTON */
+    @FindBy(xpath = "//button[normalize-space()='Delete']")
+    public WebElement deleteButton;
+
     /**
      * Finds and returns the WebElement of the dynamic delete record locator based on the provided text.
      *
