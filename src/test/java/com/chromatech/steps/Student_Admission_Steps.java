@@ -4,6 +4,7 @@ import com.avatars.utils.CommonMethods;
 import com.avatars.utils.WebDriverUtils;
 import com.chromatech.pages.DashboardPage;
 import com.chromatech.pages.StudentAdmissionsPage;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -71,11 +72,16 @@ public class Student_Admission_Steps {
     @When("saves submission")
     public void saves_submission() {
         studentAdmissionsPage.saveButton.click();
-        CommonMethods.sleep(5000);
     }
 
     @When("enters guardian phone number {string}")
     public void enters_guardian_phone_number(String phoneNumber) {
         studentAdmissionsPage.guardianPhoneTextBox.sendKeys(phoneNumber);
+    }
+
+    @Then("test account is reset {string}")
+    public void test_account_is_reset(String admissionNumber) {
+        dashboardPage.bulkDeleteSubModule.click();
+        CommonMethods.sleep(5000);
     }
 }

@@ -8,7 +8,7 @@ Feature: Student Admission Scenarios
     And clicks on Sign In button
     When user clicks on Student Information module
     And clicks on Student Admission sub module
-    And enters Unique Admission Number "123456"
+    And enters Unique Admission Number "123456789012345"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
     And enters first name "Chroma Tech"
@@ -19,3 +19,4 @@ Feature: Student Admission Scenarios
     And selects Father radio button for If guardian is field
     And enters guardian phone number "703-687-5816"
     And saves submission
+    Then test account is reset "123456789012345"
