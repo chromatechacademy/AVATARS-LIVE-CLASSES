@@ -24,3 +24,9 @@ jobs:
           
       - name: Run Tests
         run: mvn -q -Dtest=RunTest test
+
+      - name: Upload Cucumber Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: cucumber-report
+          path: target/cucumber-reports/report.html
