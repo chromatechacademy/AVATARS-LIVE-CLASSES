@@ -3,10 +3,10 @@ name: Selenium Test Workflow
 on:
   workflow_dispatch:
   schedule:
-    # During standard time (UTC-5, so it's 2:55 AM UTC)
-    - cron: '55 2 * * *'
-    # During daylight saving time (UTC-4, so it's 1:55 AM UTC)
-    - cron: '55 1 * * *'
+    # During standard time (EST: UTC-5, so aim for 4:00 AM UTC)
+    - cron: '0 4 * * *'
+    # During daylight saving time (EDT: UTC-4, so aim for 3:00 AM UTC)
+    - cron: '0 3 * * *'
 
 jobs:
   test:
@@ -22,7 +22,7 @@ jobs:
           java-version: '11'
         
       - name: Set up Maven
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v2
         with:
           java-version: '11'
           server-id: github
