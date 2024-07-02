@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
         "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         features = "src/test/java/com/chromatech/features",
         glue = {"com.chromatech.steps", "com.hooks"},
-        tags = "@StudentAdmission",
+        tags = "@RunTest",
         dryRun = false
 )
 
