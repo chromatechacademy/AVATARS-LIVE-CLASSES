@@ -2,6 +2,10 @@ name: Selenium Test Workflow
 
 on:
   workflow_dispatch:
+  schedule:
+    # This will run every day at 9.40 PM EST time.
+    # GitHub uses UTC time, so we'll specify 2:40 AM to convert from EST to UTC (EST is UTC-5, but UTC-4 during daylight saving)
+    - cron: '40 2 * * *'
 
 jobs:
   test:
