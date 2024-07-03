@@ -23,4 +23,4 @@ jobs:
           server-id: github
           
       - name: Run Tests
-        run: mvn -q -Dtest=RunTest test
+        run: mvn -Dtest=RunTest test
